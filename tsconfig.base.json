@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "billet/Routes": ["apps/billet/src/app/remote-entry/entry.routes.ts"],
+      "onboarding/Routes": [
+        "apps/onboarding/src/app/remote-entry/entry.routes.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

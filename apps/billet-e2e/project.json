@@ -1,0 +1,30 @@
+{
+  "name": "billet-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/billet-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/billet-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "billet:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "billet:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "billet:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["billet"]
+}
